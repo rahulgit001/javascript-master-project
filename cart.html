@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechBazaar — Cart</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">Tech<span>Bazaar</span></a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <div class="navbar-search">
+          <span>🔍</span>
+          <input type="text" id="navSearchInput" placeholder="Search products...">
+        </div>
+        <button class="navbar-icon-btn" id="cartIconBtn" aria-label="Cart">
+          🛒
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="navbar-toggle" id="navToggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Your Cart</h1>
+      <p class="text-muted" style="margin-top:8px;">Managed entirely by <code class="mono">js/cart.js</code> + <code class="mono">js/storage.js</code></p>
+    </div>
+  </header>
+
+  <section class="container cart-layout">
+
+    <!-- ============ CART ITEMS ============ -->
+    <div class="cart-items" id="cartItemsList">
+      <!-- Empty state shown by default; JS replaces this when items exist -->
+      <div class="empty-state">
+        <h3>Your cart is empty</h3>
+        <p>Items you add from the Products page will show up here.</p>
+        <a href="products.html" class="btn btn-primary" style="margin-top:16px; display:inline-flex;">Browse products</a>
+      </div>
+    </div>
+
+    <!-- ============ SUMMARY ============ -->
+    <aside class="cart-summary">
+      <h3>Order Summary</h3>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span class="mono" id="summarySubtotal">₹0</span>
+      </div>
+      <div class="summary-row">
+        <span>Discount</span>
+        <span class="mono" id="summaryDiscount">− ₹0</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery</span>
+        <span class="mono" id="summaryDelivery">₹0</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="mono" id="summaryTotal">₹0</span>
+      </div>
+
+      <div class="promo-row">
+        <input type="text" id="promoInput" placeholder="Promo code">
+        <button class="btn btn-outline" id="applyPromoBtn">Apply</button>
+      </div>
+
+      <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+    </aside>
+  </section>
+
+  <div id="toast-container"></div>
+
+  <footer>
+    <div class="container">
+      <p>TechBazaar Learning Project · Built to learn JavaScript step by step</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

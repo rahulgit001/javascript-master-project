@@ -1,0 +1,151 @@
+/* =========================================================
+   login.css — Auth form (login/register tabs), profile page
+   ========================================================= */
+
+.auth-wrapper {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+.auth-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.auth-tab {
+  flex: 1;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.auth-tab.active {
+  background: var(--accent);
+  color: #06181A;
+}
+
+.auth-form { display: none; flex-direction: column; gap: 16px; }
+.auth-form.active { display: flex; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.85rem; color: var(--text-muted); }
+
+.form-group input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.form-group input:focus { border-color: var(--accent); outline: none; }
+
+.form-group.has-error input { border-color: var(--danger); }
+.error-text {
+  font-size: 0.78rem;
+  color: var(--danger);
+  min-height: 16px;
+}
+
+.form-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.auth-form .btn { margin-top: 8px; }
+
+.auth-divider {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+
+/* --- Profile page --- */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  padding: 40px 0 64px;
+}
+
+.profile-sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  align-self: start;
+}
+
+.avatar-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin: 0 auto 16px;
+}
+
+.profile-nav { margin-top: 20px; text-align: left; display: flex; flex-direction: column; gap: 4px; }
+.profile-nav a {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.profile-nav a.active, .profile-nav a:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.profile-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.order-row:last-child { border-bottom: none; }
+.order-id { font-family: var(--font-mono); color: var(--text-muted); }
+
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+.status-pill.delivered { background: rgba(76,217,138,0.15); color: var(--success); }
+.status-pill.pending { background: rgba(255,179,71,0.15); color: var(--amber); }
+
+@media (max-width: 760px) {
+  .profile-layout { grid-template-columns: 1fr; }
+}

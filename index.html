@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechBazaar — Home</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">Tech<span>Bazaar</span></a>
+
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <div class="navbar-search">
+          <span>🔍</span>
+          <input type="text" id="navSearchInput" placeholder="Search products...">
+        </div>
+        <button class="navbar-icon-btn" id="cartIconBtn" aria-label="Cart">
+          🛒
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="navbar-toggle" id="navToggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="section">
+    <div class="container" style="display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center;">
+      <div>
+        <p class="text-muted mono" style="margin-bottom:12px;">// verified electronics, real specs</p>
+        <h1>Gear that ships<br>with the numbers<br>to prove it.</h1>
+        <p class="text-muted" style="max-width:440px; margin:20px 0 28px;">
+          Every listing on TechBazaar comes with real benchmark data, not marketing fluff.
+          Browse, compare, and check out — all wired up with vanilla JavaScript underneath.
+        </p>
+        <div style="display:flex; gap:14px;">
+          <a href="products.html" class="btn btn-primary">Browse products</a>
+          <a href="#featured" class="btn btn-outline">See featured</a>
+        </div>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted);">
+        <p style="color:var(--accent); margin-bottom:10px;">$ live_stats.json</p>
+        <p>products_in_stock: <span id="statProducts" style="color:var(--text);">—</span></p>
+        <p>cart_items: <span id="statCart" style="color:var(--text);">—</span></p>
+        <p>logged_in_user: <span id="statUser" style="color:var(--text);">guest</span></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FEATURED PRODUCTS (rendered by JS) ============ -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px;">
+        <h2>Featured products</h2>
+        <a href="products.html" class="text-muted">View all →</a>
+      </div>
+
+      <!-- JS should fetch data/products.json and inject .product-card items here -->
+      <div class="product-grid" id="featuredGrid">
+        <div class="empty-state">
+          <h3>Loading featured products…</h3>
+          <p>This grid is populated by <code class="mono">js/app.js</code> using <code class="mono">js/api.js</code>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast-container"></div>
+
+  <footer>
+    <div class="container">
+      <p>TechBazaar Learning Project · Built to learn JavaScript step by step</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS (order matters — utils/storage/api load before app) ============ -->
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

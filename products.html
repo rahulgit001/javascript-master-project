@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechBazaar — Products</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-logo">Tech<span>Bazaar</span></a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <div class="navbar-search">
+          <span>🔍</span>
+          <input type="text" id="navSearchInput" placeholder="Search products...">
+        </div>
+        <button class="navbar-icon-btn" id="cartIconBtn" aria-label="Cart">
+          🛒
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="navbar-toggle" id="navToggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>All Products</h1>
+      <p class="text-muted" style="margin-top:8px;">Filter, sort, and search — powered by <code class="mono">js/products.js</code></p>
+    </div>
+  </header>
+
+  <section class="container products-layout">
+
+    <!-- ============ FILTERS SIDEBAR ============ -->
+    <aside class="filters" id="filterPanel">
+      <h3>Filters</h3>
+
+      <div class="filter-group">
+        <label class="text-muted" style="margin-bottom:8px; display:block;">Category</label>
+        <label><input type="checkbox" name="category" value="laptops"> Laptops</label>
+        <label><input type="checkbox" name="category" value="phones"> Phones</label>
+        <label><input type="checkbox" name="category" value="audio"> Audio</label>
+        <label><input type="checkbox" name="category" value="accessories"> Accessories</label>
+      </div>
+
+      <div class="filter-group price-range">
+        <label class="text-muted" style="margin-bottom:8px; display:block;">Max price: ₹<span id="priceValue">100000</span></label>
+        <input type="range" id="priceRange" min="0" max="100000" step="1000" value="100000">
+      </div>
+
+      <div class="filter-group">
+        <label class="text-muted" style="margin-bottom:8px; display:block;">Availability</label>
+        <label><input type="radio" name="stock" value="all" checked> All</label>
+        <label><input type="radio" name="stock" value="in-stock"> In stock only</label>
+      </div>
+
+      <button class="btn btn-outline" id="clearFiltersBtn" style="width:100%; margin-top:8px;">Clear filters</button>
+    </aside>
+
+    <!-- ============ PRODUCT LIST ============ -->
+    <div>
+      <div class="products-toolbar">
+        <p class="text-muted" id="resultsCount">Loading products…</p>
+        <select id="sortSelect">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A–Z</option>
+        </select>
+      </div>
+
+      <!-- JS renders .product-card elements into this grid -->
+      <div class="product-grid" id="productGrid">
+        <div class="empty-state">
+          <h3>No products loaded yet</h3>
+          <p>Fetch <code class="mono">data/products.json</code> in <code class="mono">js/products.js</code> and render cards here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast-container"></div>
+
+  <footer>
+    <div class="container">
+      <p>TechBazaar Learning Project · Built to learn JavaScript step by step</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
