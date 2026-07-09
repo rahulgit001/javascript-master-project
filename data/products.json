@@ -1,0 +1,102 @@
+[
+  {
+    "id": "p001",
+    "name": "Wireless Bluetooth Headphones",
+    "category": "Electronics",
+    "price": 2499,
+    "rating": 4.3,
+    "image": "images/headphones.jpg",
+    "description": "Over-ear wireless headphones with 30-hour battery life and active noise cancellation.",
+    "stock": 25
+  },
+  {
+    "id": "p002",
+    "name": "Smartwatch Pro",
+    "category": "Electronics",
+    "price": 6999,
+    "rating": 4.5,
+    "image": "images/smartwatch.jpg",
+    "description": "AMOLED display smartwatch with heart-rate and SpO2 tracking.",
+    "stock": 12
+  },
+  {
+    "id": "p003",
+    "name": "Mechanical Keyboard",
+    "category": "Electronics",
+    "price": 3499,
+    "rating": 4.6,
+    "image": "images/keyboard.jpg",
+    "description": "RGB backlit mechanical keyboard with hot-swappable switches.",
+    "stock": 18
+  },
+  {
+    "id": "p004",
+    "name": "Running Shoes",
+    "category": "Fashion",
+    "price": 2999,
+    "rating": 4.1,
+    "image": "images/shoes.jpg",
+    "description": "Lightweight breathable running shoes with cushioned sole.",
+    "stock": 40
+  },
+  {
+    "id": "p005",
+    "name": "Leather Backpack",
+    "category": "Fashion",
+    "price": 1899,
+    "rating": 4.0,
+    "image": "images/backpack.jpg",
+    "description": "Durable leather backpack with padded laptop compartment.",
+    "stock": 30
+  },
+  {
+    "id": "p006",
+    "name": "Stainless Steel Water Bottle",
+    "category": "Home",
+    "price": 599,
+    "rating": 4.4,
+    "image": "images/bottle.jpg",
+    "description": "Insulated bottle that keeps drinks cold for 24 hours.",
+    "stock": 60
+  },
+  {
+    "id": "p007",
+    "name": "Non-stick Cookware Set",
+    "category": "Home",
+    "price": 3299,
+    "rating": 4.2,
+    "image": "images/cookware.jpg",
+    "description": "5-piece non-stick cookware set, induction compatible.",
+    "stock": 15
+  },
+  {
+    "id": "p008",
+    "name": "Yoga Mat",
+    "category": "Sports",
+    "price": 899,
+    "rating": 4.3,
+    "image": "images/yogamat.jpg",
+    "description": "Extra-thick anti-slip yoga mat with carry strap.",
+    "stock": 50
+  },
+  {
+    "id": "p009",
+    "name": "Portable Bluetooth Speaker",
+    "category": "Electronics",
+    "price": 1799,
+    "rating": 4.4,
+    "image": "images/speaker.jpg",
+    "description": "Waterproof portable speaker with 12-hour playback.",
+    "stock": 22
+  },
+  {
+    "id": "p010",
+    "name": "Ceramic Coffee Mug Set",
+    "category": "Home",
+    "price": 799,
+    "rating": 4.0,
+    "image": "images/mugset.jpg",
+    "description": "Set of 4 ceramic mugs, microwave and dishwasher safe.",
+    "stock": 35
+  }
+]
